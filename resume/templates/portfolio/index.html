@@ -66,7 +66,7 @@
 	</head>
 	<body>
 	
-	<div id="fh5co-header" style="background-image: url({% static "images/polygon.png" %});" data-stellar-background-ratio="0.5">
+	<div id="fh5co-header" style="background-image: url({% static "images/polygon.jpg" %});" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="bio-photo text-center">
 			<a href="/"><img src="{% static "images/person_2.jpg" %}" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
@@ -82,7 +82,7 @@
 						<h2>01. My Works</h2>
 					</div>
 					<div class="col-md-8 col-sm-8 col-xs-12">
-						<div class="row">
+						<div class="row card-git">
 <!--							<div class="col-md-6 col-sm-6 col-xs-6 work animate-box">-->
 <!--								<a href="{% static "images/img_1.jpg" %}" class="image-popup" title="Title Of Work Here">-->
 <!--									<img src="{% static "images/img_1.jpg" %}" alt="Free HTML5 Bootstrap Template by FreeHTML5.co" class="img-responsive">-->
@@ -135,7 +135,11 @@
 							<div class="github-card" data-github="yarburart" data-width="400" data-height="318" data-theme="medium"></div>
 							<script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
 							<div class="col-md-12">
-							<p>Hello I'm <strong>Yaroslav Bur.</strong> I am a passionate learner with a love of programming. <br>
+							<p>Hello I'm <strong>Yaroslav Bur.</strong>
+								No one will read this text anyway, so I can write all sorts of nonsense here. <br>
+								Go and read the code if you are really interested. <br>
+								But like Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non nunc neque ...<br>
+								I am a passionate learner with a love of programming. <br>
 								I have recently started learning Python and C sharp, <br>
 								and am excited to further my knowledge in these languages. <br>
 								As a beginner, I am focusing on the fundamentals of programming <br>
@@ -170,7 +174,7 @@
 					</div>
 					<div class="col-md-8 col-sm-8 col-xs-12">
 						<div class="col-md-12">
-							<form action="#">
+							<form action="#" id="dev-form">
 								<div class="form-group">
 									<div class="row">
 										<div class="col-md-6">
@@ -201,7 +205,7 @@
 								<div class="form-group">
 									<div class="row">
 										<div class="col-md-6">
-											<input type="submit" class="btn btn-primary btn-outline btn-lg btn-block" value="Submit">
+											<input type="submit" class="btn btn-primary btn-outline btn-lg btn-block" value="Submit" >
 										</div>
 									</div>
 								</div>
@@ -224,7 +228,7 @@
 					<div class="col-md-8 col-sm-8 col-xs-12">
 						<div class="col-md-12">
 							<p>&copy;2023 powered by YarBurArt. All Rights Reserved. <br>
-								Designed by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a>
+								Designed by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> cuz I'm kind of lazy.
 						</div>
 					</div>
 				</div>
@@ -237,7 +241,6 @@
 	
 
 	</div>
-
 
 	<!-- jQuery -->
 	<script src="{% static "js/jquery.min.js" %}"></script>
@@ -260,7 +263,19 @@
 	<script src="{% static "js/main.js" %}"></script>
 
 	<!-- github cards -->
-	<script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+	<script>
+		function okCardGit() {
+			$('.card-git').append(
+				`<p>Okay, I respect your privacy (jsdelivr is blocked).
+				There are examples of my work on the profile page on github </p>`
+			);
+		}
+		$( "#dev-form" ).on( "submit", function( event ) {
+		  alert( "Imagine it working (～￣▽￣)～ " );
+		  event.preventDefault();
+		});
+	</script>
+	<script src="https://cdn.jsdelivr.net/github-cards/latest/widget.js" onerror="okCardGit()"></script>
 
 	</body>
 </html>

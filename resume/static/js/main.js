@@ -76,13 +76,10 @@
 		} , { offset: '85%' } );
 	};
 
-
-
 	
 	$(function(){
 		parallax();
 		contentWayPoint();
 	});
-
 
 }());
